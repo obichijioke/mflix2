@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import ReactPlayer from "react-player";
-import MovieContext from "../../context/movie/movieContext";
 
 const VideoPlayer = ({
   handlePreviewEnd,
@@ -11,7 +10,6 @@ const VideoPlayer = ({
   genres,
   seasons,
 }) => {
-  const movieContext = useContext(MovieContext);
   useEffect(() => {
     if (videoUrl === null) {
       handlePreviewEnd();
