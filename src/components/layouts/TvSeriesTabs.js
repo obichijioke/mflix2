@@ -18,6 +18,8 @@ const TvSeriesTabs = ({ movieId }) => {
   //useEffect
   useEffect(() => {
     setId(movieId);
+    setShowEpisodeDetails(false);
+    //eslint-disable-next-line
   }, [movieId]);
 
   //states
