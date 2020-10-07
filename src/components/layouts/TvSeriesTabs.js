@@ -45,7 +45,7 @@ const TvSeriesTabs = ({ movieId }) => {
       {showEpisodeDetails === false ? (
         <Tabs
           defaultActiveKey="0"
-          tabPosition={size.width > 500 ? "left" : "top"}
+          tabPosition={size.width > 700 ? "left" : "top"}
           style={{ height: 450 }}
           onTabClick={(activeKey) => {
             setSeasonNumber(activeKey);

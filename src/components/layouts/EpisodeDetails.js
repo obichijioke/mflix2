@@ -12,7 +12,7 @@ const EpisodeDetails = ({ handleBack, episodeDetails }) => {
         </h2>
         <p
           onClick={handleBack}
-          className="text-gray-500 font-bold text-lg cursor-pointer"
+          className="text-gray-500 font-bold text-lg cursor-pointer md:pr-4"
         >
           Back
         </p>
