@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import useWindowSize from "../../hooks/useWindowSize";
 import { Tabs } from "antd";
 import EpisodeCardList from "./EpisodeCardList.js";
 import EpisodeDetails from "./EpisodeDetails";
@@ -7,6 +8,9 @@ import Casts from "./Casts";
 const TabPane = Tabs.TabPane;
 
 const TvSeriesTabs = ({ movieId }) => {
+  //windows size hook
+  const size = useWindowSize();
+
   //context
   const movieContext = useContext(MovieContext);
   const { movieDetails } = movieContext;
@@ -37,11 +41,11 @@ const TvSeriesTabs = ({ movieId }) => {
   };
 
   return (
-    <div className="bg-dark-800 relative mt-16 mb-20 py-2" key={id}>
+    <div className="bg-dark-800 relative mt-8 md:mt-16 mb-20 py-2" key={id}>
       {showEpisodeDetails === false ? (
         <Tabs
           defaultActiveKey="0"
-          tabPosition="left"
+          tabPosition={size.width > 500 ? "left" : "top"}
           style={{ height: 450 }}
           onTabClick={(activeKey) => {
             setSeasonNumber(activeKey);
@@ -49,14 +53,14 @@ const TvSeriesTabs = ({ movieId }) => {
         >
           <TabPane
             tab={
-              <h6 className="text-left text-xl px-5 h-20 flex flex-col justify-center">
+              <h6 className="text-left text-lg md:text-xl px-5 py-5 md:h-20 font-bold flex flex-col justify-center">
                 Details
               </h6>
             }
             key="0"
           >
             {
-              <div className="pr-8">
+              <div className="px-4 md:pr-8">
                 <h5 className="text-xl mb-2 font-bold">Overview</h5>
                 <p className="text-gray-500">
                   {movieDetails.overview &&
@@ -71,19 +75,19 @@ const TvSeriesTabs = ({ movieId }) => {
             movieDetails.seasons.map((season, i) => (
               <TabPane
                 tab={
-                  <div className="px-5 h-20 flex flex-col justify-center">
-                    <h6 className="text-left text-xl mb-2 font-bold">
+                  <div className="px-5 py-5 md:h-20 flex flex-col justify-center">
+                    <h6 className="text-left text-lg md:text-xl mb-2 font-bold">
                       {season.name}
                     </h6>
-                    <p className="text-left text-sm text-gray-500">
+                    <p className="text-left text-xs md:text-sm text-gray-500">
                       {season.air_date && season.air_date.slice(0, 4)}
                     </p>
                   </div>
                 }
                 key={season.season_number}
               >
-                <h4 className="text-xl">{season.name && season.name}</h4>
-                <div className="w-full pr-8 text-sm mt-5 text-gray-500">
+                <h4 className="text-xl px-4">{season.name && season.name}</h4>
+                <div className="w-full px-4 md:pr-8 text-sm mt-5 text-gray-500">
                   {season.overview && season.overview.length > 200
                     ? season.overview.slice(0, 200) + "..."
                     : season.overview}
@@ -109,18 +113,18 @@ const TvSeriesTabs = ({ movieId }) => {
               );
             }}
             defaultActiveKey={tabKey}
-            tabPosition="left"
+            tabPosition={size.width > 500 ? "left" : "top"}
             style={{ height: 450 }}
           >
             {episodeList &&
               episodeList.map((episode) => (
                 <TabPane
                   tab={
-                    <div className="px-5 h-20 flex flex-col justify-center">
-                      <h6 className="text-left text-xl mb-2 font-bold">
+                    <div className="px-5 py-5 md:h-20 flex flex-col justify-center">
+                      <h6 className="text-left text-lg md:text-xl mb-2 font-bold">
                         {"Episode " + episode.episode_number}
                       </h6>
-                      <p className="text-left text-sm text-gray-500">
+                      <p className="text-left text-xs md:text-sm text-gray-500">
                         {episode.air_date && episode.air_date.slice(0, 4)}
                       </p>
                     </div>

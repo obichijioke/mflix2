@@ -20,7 +20,7 @@ const VideoPlayer = ({
   }, []);
 
   return (
-    <div className="player-wrapper">
+    <div className="player-wrapper h-64 lg:h-auto">
       <div className="absolute bg-black top-0 left-0 bg-opacity-50 z-10 w-full h-full">
         <div className="relative w-full h-full top-0 left-0">
           <div
