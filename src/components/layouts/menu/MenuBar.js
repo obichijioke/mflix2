@@ -15,7 +15,7 @@ export default function MenuBar(props) {
     });
   };
   return (
-    <nav className="nav">
+    <nav className="nav relative lg:absolute">
       <div style={{ display: "flex", alignItems: "center" }}>
         <img
           className="logo"

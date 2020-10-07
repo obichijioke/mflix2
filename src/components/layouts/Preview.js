@@ -26,7 +26,7 @@ export default function Preview({
   const handlePreviewVideo = () => {
     setTimeout(() => {
       setShowTrailer(true);
-    }, 5000);
+    }, 225000);
   };
 
   const handlePreviewEnd = () => {
@@ -49,14 +49,14 @@ export default function Preview({
         <>
           {backDrop && (
             <img
-              className="w-full h-auto"
+              className="w-full h-64 lg:h-auto object-cover"
               src={`https://image.tmdb.org/t/p/original/${backDrop}`}
               alt="postercover"
             />
           )}
 
           <div className="absolute top-0 left-0 h-full w-full bg-black bg-gradient-to-r from-black opacity-50"></div>
-          <div className="absolute left-0 top-0 flex mt-32 mx-10">
+          <div className="absolute left-0 top-0 flex mt-8 md:mt-32 mx-3 lg:mx-10">
             {poster && (
               <img
                 className="w-1/5 rounded-md mx-5 my-4 shadow-lg hidden md:block"
@@ -91,22 +91,22 @@ export default function Preview({
                   ))}
                 </ul>
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold md:my-3 my-1 text-shadow-md">
+              <h1 className="text-2xl md:text-5xl font-bold md:my-3 my-1 text-shadow-md">
                 {title}
               </h1>
-              <h5 className="text-sm md:text-xl font-medium my-1 md:my-2 text-gray-300 text-shadow-md">
+              <h5 className="text-xs md:text-xl font-medium my-1 md:my-2 text-gray-300 text-shadow-md">
                 Overview
               </h5>
               <p className="text-xs md:text-sm text-gray-400 text-shadow-md">
-                {overview && overview.length > 200
-                  ? overview.slice(0, 200) + "..."
+                {overview && overview.length > 100
+                  ? overview.slice(0, 100) + "..."
                   : overview}
               </p>
               <div className="">
-                <button className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded mx-auto mt-5 inline-block shadow-lg mr-4">
+                <button className="bg-red-800 hover:bg-red-900 text-white font-bold py-1 md:py-2 px-2 md:px-4 rounded mx-auto mt-3 md:mt-5 inline-block shadow-lg mr-2">
                   Trailer
                 </button>
-                <button className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded mx-auto mt-5 inline-block shadow-lg">
+                <button className="bg-red-800 hover:bg-red-900 text-white font-bold py-1 md:py-2 px-2 md:px-4 rounded mx-auto mt-3 md:mt-5 inline-block shadow-lg">
                   Watch
                 </button>
               </div>

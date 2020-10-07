@@ -86,7 +86,7 @@ const SliderContainer = ({ movies, title }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           initialSlide: 0,
           slidesToScroll: 1,
         },
@@ -98,7 +98,7 @@ const SliderContainer = ({ movies, title }) => {
     return <Spinner />;
   } else {
     return (
-      <div className="w-full px-2 my-10 px-5">
+      <div className="w-full px-2 my-2 md:my-10 px-5">
         <div className="relative">
           {title && <h3 className="text-2xl font-medium my-5">{title}</h3>}
           <Slider {...settings}>

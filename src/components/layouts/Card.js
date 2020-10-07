@@ -26,7 +26,7 @@ const Card = (props) => {
           alt="galaxy"
           className="hvr-grow w-full rounded-md"
         />
-        <h6 className="text-base font-medium mt-4 mx-1">
+        <h6 className="text-xs md:text-base font-medium mt-4 mx-1">
           {name
             ? name
             : title === undefined
@@ -38,21 +38,21 @@ const Card = (props) => {
             : title}
         </h6>
         <div className="flex justify-between mt-2 mx-1">
-          <p className="text-gray-500">
+          <p className="text-gray-500 text-xs md:text-base">
             {release_date === undefined
               ? first_air_date && first_air_date.slice(0, 4)
               : release_date && release_date.slice(0, 4)}
           </p>
           <ul className="flex flex-no-wrap">
             <li>
-              <i className="fas fa-heart fa-xs m-1 text-red-700"></i>
+              <i className="fas fa-heart fa-xs m-1 text-red-700 hidden md:block"></i>
             </li>
             <li>
-              <i className="fas fa-eye fa-xs m-2 text-red-700"></i>
+              <i className="fas fa-eye fa-xs m-2 text-red-700 hidden md:block"></i>
             </li>
             <li>
               <i
-                className="fas fa-star fa-xs mx-1"
+                className="fas fa-star fa-xs mx-1 text-xs"
                 style={{ color: "rgb(253, 151, 64)" }}
               ></i>
               <span className="inline-block text-xs text-gray-500">
