@@ -104,7 +104,7 @@ const TvSeriesTabs = ({ movieId }) => {
             onTabClick={(activeKey) => {
               setEpisodeDetails(
                 episodeList.filter(
-                  (item) => item.episode_number == activeKey
+                  (item) => item.episode_number === parseInt(activeKey)
                 )[0]
               );
             }}

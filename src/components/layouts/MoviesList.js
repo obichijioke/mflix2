@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import Card from "./Card";
 import MovieContext from "../../context/movie/movieContext";
 import Spinner from "../Spinner";
-import { Button } from "antd";
 
 const MoviesList = ({ movieType }) => {
   const movieContext = useContext(MovieContext);
@@ -12,6 +11,7 @@ const MoviesList = ({ movieType }) => {
 
   useEffect(() => {
     handleEffect();
+    //eslint-disable-next-line
   }, [movieContext.movieList]);
 
   const handleEffect = () => {

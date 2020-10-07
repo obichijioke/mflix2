@@ -16,6 +16,7 @@ const VideoPlayer = ({
     } else {
       return;
     }
+    //eslint-disable-next-line
   }, []);
 
   return (
@@ -25,7 +26,6 @@ const VideoPlayer = ({
           <div
             className="absolute w-full h-full top-0 left-0"
             style={{
-              background: "rgb(0,0,0)",
               background:
                 "linear-gradient(0deg, rgba(0,0,0,0) 76%, rgba(0,0,0,0.9500175070028011) 85%)",
             }}
@@ -34,7 +34,6 @@ const VideoPlayer = ({
           <div
             className="absolute w-full h-full bottom-0 left-0"
             style={{
-              background: "rgb(0,0,0)",
               background:
                 "linear-gradient(180deg, rgba(0,0,0,0) 66%, rgba(0,0,0,0.9500175070028011) 79%)",
             }}

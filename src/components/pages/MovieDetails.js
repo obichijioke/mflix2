@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import VideoPlayer from "../layouts/VideoPlayer";
+
 import MovieContext from "../../context/movie/movieContext";
-import RelatedItems from "../layouts/RelatedItems";
+
 import SliderContainer from "../layouts/SliderContainer";
 import Preview from "../layouts/Preview";
 
@@ -14,7 +14,6 @@ const MovieDetails = (props) => {
     vote_average,
     release_date,
     original_name,
-    first_air_date,
     overview,
     backdrop_path,
     runtime,
@@ -25,6 +24,7 @@ const MovieDetails = (props) => {
     setTimeout(function () {
       movieContext.setShowPreview();
     }, 6000);
+    //eslint-disable-next-line
   }, [props.match.params.name]);
 
   return (

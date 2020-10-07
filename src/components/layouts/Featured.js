@@ -9,6 +9,7 @@ export default function Featured() {
     setTimeout(function () {
       movieContext.setShowPreview();
     }, 15000);
+    //eslint-disable-next-line
   }, []);
 
   const {

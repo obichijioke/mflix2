@@ -18,6 +18,7 @@ const EpisodeCardList = ({
   useEffect(() => {
     setFetched(false);
     getData();
+    //eslint-disable-next-line
   }, [movie]);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const EpisodeCardList = ({
 
   useEffect(() => {
     handleepisodeList(episodes);
+    //eslint-disable-next-line
   }, [episodes]);
 
   const getData = () => {

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from "react";
-import VideoPlayer from "../layouts/VideoPlayer";
 import MovieContext from "../../context/movie/movieContext";
 import TvSeriesTabs from "../layouts/TvSeriesTabs.js";
 import SliderContainer from "../layouts/SliderContainer";
@@ -8,13 +7,11 @@ import Preview from "../layouts/Preview";
 const TvDetails = (props) => {
   const movieContext = useContext(MovieContext);
   const {
-    title,
     genres,
     poster_path,
     vote_average,
     release_date,
-    original_name,
-    first_air_date,
+
     overview,
     backdrop_path,
     name,
@@ -28,6 +25,7 @@ const TvDetails = (props) => {
     setTimeout(function () {
       movieContext.setShowPreview();
     }, 5000);
+    // eslint-disable-next-line
   }, [props.match.params.name]);
 
   return (

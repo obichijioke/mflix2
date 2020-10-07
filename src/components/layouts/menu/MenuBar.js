@@ -1,15 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "../../../App.css";
 import logo from "../../../images/logo.png";
-import { NavLink } from "react-router-dom";
-import MovieContext from "../../../context/movie/movieContext";
 import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
 import Search from "../../Search";
 
 export default function MenuBar(props) {
-  const movieContext = useContext(MovieContext);
-
   const [current, setCurrent] = useState({ current: "home" });
 
   const handleClick = (e) => {
