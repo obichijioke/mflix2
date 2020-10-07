@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "../../../App.css";
 import logo from "../../../images/logo.png";
 import LeftMenu from "./LeftMenu";
-import RightMenu from "./RightMenu";
-import Search from "../../Search";
 
 export default function MenuBar(props) {
   const [current, setCurrent] = useState({ current: "home" });
@@ -16,19 +14,9 @@ export default function MenuBar(props) {
   };
   return (
     <nav className="nav relative lg:absolute">
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <img
-          className="logo"
-          src={logo}
-          alt="logo"
-          style={{ marginRight: "4rem" }}
-        />
+      <div className="flex justify-between w-full">
+        <img className="w-16" src={logo} alt="logo" />
         <LeftMenu handleClick={handleClick} current={current.current} />
-      </div>
-
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Search />
-        <RightMenu handleClick={handleClick} current={current.current} />
       </div>
     </nav>
   );
