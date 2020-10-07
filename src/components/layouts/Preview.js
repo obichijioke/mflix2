@@ -26,7 +26,7 @@ export default function Preview({
   const handlePreviewVideo = () => {
     setTimeout(() => {
       setShowTrailer(true);
-    }, 225000);
+    }, 7000);
   };
 
   const handlePreviewEnd = () => {
